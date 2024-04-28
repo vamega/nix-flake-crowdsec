@@ -1,5 +1,11 @@
 # Crowdsec for NixOS
 
+This project has moved to Codeberg.
+You can find the latest version at https://codeberg.org/kampka/nix-flake-crowdsec
+Please make sure to update your dependency to receive the latests updates.
+
+## About
+
 This repository contains a [Nix flake](https://nixos.wiki/wiki/Flakes) for running [Crowdsec](https://www.crowdsec.net/) on NixOS.
 
 CrowdSec is a security tool designed to protect servers, services, and applications by analyzing user behavior and network traffic to detect and block potential attacks. It operates similarly to Fail2Ban but with a few key differences:
@@ -18,7 +24,7 @@ To setup the [security engine](https://docs.crowdsec.net/docs/getting_started/se
 {
   inputs = {
     crowdsec = {
-      url = "github:kampka/nix-flake-crowdsec";
+      url = "git+https://codeberg.org/kampka/nix-flake-crowdsec.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -75,7 +81,7 @@ Please consult the [bouncer documentation](https://docs.crowdsec.net/u/bouncers/
 {
   inputs = {
     crowdsec = {
-      url = "github:kampka/nix-flake-crowdsec";
+      url = "git+https://codeberg.org/kampka/nix-flake-crowdsec.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
