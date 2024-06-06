@@ -1,5 +1,5 @@
 {
-  description = "A Aggregate prometheus exporters into a single endpoint";
+  description = "CrowdSec is a free, open-source and collaborative IPS";
 
   outputs = {
     self,
