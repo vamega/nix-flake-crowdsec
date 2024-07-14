@@ -22,13 +22,6 @@
       cfg.patterns))}
   '';
 
-  consoleSettings = {
-    share_manual_decisions = false;
-    share_custom = true;
-    share_tainted = true;
-    share_context = false;
-  };
-
   defaultSettings = with lib; {
     common = {
       daemonize = mkForce false;
