@@ -178,6 +178,8 @@ in {
           path = [cscli];
 
           wantedBy = ["multi-user.target"];
+          after = ["network-online.target"];
+          wants = ["network-online.target"];
           serviceConfig = with lib; {
             User = "crowdsec";
             Group = "crowdsec";
