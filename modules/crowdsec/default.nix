@@ -107,8 +107,8 @@ in {
     };
     settings = mkOption {
       description = mdDoc ''
-        Settings for MediaMTX. Refer to the defaults at
-        <https://github.com/bluenviron/mediamtx/blob/main/mediamtx.yml>.
+        Settings for Crowdsec. Refer to the defaults at
+        <https://github.com/crowdsecurity/crowdsec/blob/master/config/config.yaml>.
       '';
       type = format.type;
       default = {};
