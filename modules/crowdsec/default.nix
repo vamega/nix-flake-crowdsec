@@ -42,6 +42,14 @@
     };
     crowdsec_service = {
       enable = mkDefault true;
+      acquisition_dir = let
+        yamlFiles = map (format.generate "acquisition.yaml") cfg.acquisitions;
+        dir = pkgs.runCommand "crowdsec-acquisitions" {} ''
+          mkdir -p $out
+          cp ${lib.concatStringsSep " " yamlFiles} $out
+        '';
+      in
+        mkDefault dir;
     };
     api = {
       client = {
@@ -92,6 +100,21 @@ in {
       '';
       type = types.nullOr types.path;
       default = null;
+    };
+    acquisitions = mkOption {
+      type = with types; listOf format.type;
+      default = {};
+      description = mdDoc ''
+        A list of acquisition specifications, which define the data sources you want to be parsed.
+        See <https://docs.crowdsec.net/u/getting_started/post_installation/acquisition_new> for details.
+      '';
+      example = [
+        {
+          source = "journalctl";
+          journalctl_filter = ["_SYSTEMD_UNIT=sshd.service"];
+          labels.type = "syslog";
+        }
+      ];
     };
     patterns = mkOption {
       description = mdDoc ''
