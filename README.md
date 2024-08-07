@@ -64,7 +64,7 @@ To enroll your crowdsec engine into the central API, you need to obtain an enrol
 Enrolling your engine will give it access to community or commercial blocklist and decisions, depending on your plan.
 Enrollment is optional, if you do not want to enroll your engine and just at on your own logs / events, simply omit the `enrollKeyFile` from the settings.
 
-For additional configuration options, please consult the (Crowdsec documentation)[https://docs.crowdsec.net/docs/configuration/crowdsec_configuration/].
+For additional configuration options, please consult the [Crowdsec documentation](https://docs.crowdsec.net/docs/configuration/crowdsec_configuration/).
 
 
 ### Crowdsec firewall bouncer
