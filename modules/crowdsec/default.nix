@@ -81,7 +81,7 @@ in {
     name = mkOption {
       type = types.str;
       description = mdDoc ''
-        Name of the machine when registering it at the central or loal api.
+        Name of the machine when registering it at the central or local api.
       '';
       default = config.networking.hostName;
     };
