@@ -1,9 +1,5 @@
 # Crowdsec for NixOS
 
-This project has moved to Codeberg.
-You can find the latest version at https://codeberg.org/kampka/nix-flake-crowdsec
-Please make sure to update your dependency to receive the latests updates.
-
 ## About
 
 This repository contains a [Nix flake](https://nixos.wiki/wiki/Flakes) for running [Crowdsec](https://www.crowdsec.net/) on NixOS.
