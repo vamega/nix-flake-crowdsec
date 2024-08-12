@@ -151,6 +151,9 @@ in {
       set -eu
       set -o pipefail
 
+      # cscli needs crowdsec on it's path in order to be able to run `cscli explain`
+      export PATH=$PATH:${lib.makeBinPath [pkg]}
+
       exec ${pkg}/bin/cscli -c=${configFile} "''${@}"
     '';
   in
