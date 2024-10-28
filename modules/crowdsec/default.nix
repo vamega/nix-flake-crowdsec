@@ -137,7 +137,7 @@ in {
       default = {};
     };
     allowLocalJournalAccess = mkOption {
-      description = mkDoc ''
+      description = ''
         Allow acquisitions from local systemd-journald.
         For details, see <https://doc.crowdsec.net/docs/data_sources/journald>.
       '';
