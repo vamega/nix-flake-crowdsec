@@ -92,6 +92,7 @@ in {
         Name of the machine when registering it at the central or local api.
       '';
       default = config.networking.hostName;
+      defaultText = lib.literalExpression "config.networking.hostName";
     };
     enrollKeyFile = mkOption {
       description = mdDoc ''
