@@ -26,22 +26,22 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 {
   lib,
-  buildGoModule,
+  buildGo123Module,
   fetchFromGitHub,
   installShellFiles,
 }:
-buildGoModule rec {
+buildGo123Module rec {
   pname = "crowdsec";
-  version = "1.6.3";
+  version = "1.6.4";
 
   src = fetchFromGitHub {
     owner = "crowdsecurity";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-JN2siYUUFPSz+SyQwkX6DZ9k82SGHEQ1QHBEIfEV4EM=";
+    hash = "sha256-U3YnLjsD+Kl/6HD+RPP0gWa4N96X5wkbdCmIrxas1I8=";
   };
 
-  vendorHash = "sha256-fl5LkRz69QOq4aPyAhMFxw1FWozLzofDBUGvRptuyZY=";
+  vendorHash = "sha256-PtBVXPbLNdJyS8v8H9eRB6sTPaiseg18+eXToHvH7tw=";
 
   nativeBuildInputs = [installShellFiles];
 
