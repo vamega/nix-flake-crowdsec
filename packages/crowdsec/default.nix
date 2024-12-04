@@ -26,11 +26,11 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 {
   lib,
-  buildGo123Module,
+  buildGoModule,
   fetchFromGitHub,
   installShellFiles,
 }:
-buildGo123Module rec {
+buildGoModule rec {
   pname = "crowdsec";
   version = "1.6.4";
 
