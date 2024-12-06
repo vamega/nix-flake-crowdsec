@@ -31,7 +31,7 @@ in {
     enable = mkEnableOption "CrowSec Firewall Bouncer";
     package = mkPackageOption pkgs "crowdsec-firewall-bouncer" {};
     settings = mkOption {
-      description = mdDoc ''
+      description = ''
         Settings for CrowdSec Firewall Bouncer. Refer to <https://docs.crowdsec.net/u/bouncers/firewall/#configuration-directives> for details.
       '';
       type = format.type;

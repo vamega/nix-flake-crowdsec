@@ -88,14 +88,14 @@ in {
     };
     name = mkOption {
       type = types.str;
-      description = mdDoc ''
+      description = ''
         Name of the machine when registering it at the central or local api.
       '';
       default = config.networking.hostName;
       defaultText = lib.literalExpression "config.networking.hostName";
     };
     enrollKeyFile = mkOption {
-      description = mdDoc ''
+      description = ''
         The file containing the enrollment key used to enroll the engine at the central api console.
         See <https://docs.crowdsec.net/docs/next/console/enrollment/#where-can-i-find-my-enrollment-key> for details.
       '';
@@ -105,7 +105,7 @@ in {
     acquisitions = mkOption {
       type = with types; listOf format.type;
       default = {};
-      description = mdDoc ''
+      description = ''
         A list of acquisition specifications, which define the data sources you want to be parsed.
         See <https://docs.crowdsec.net/u/getting_started/post_installation/acquisition_new> for details.
       '';
@@ -118,7 +118,7 @@ in {
       ];
     };
     patterns = mkOption {
-      description = mdDoc ''
+      description = ''
         A set of pattern files for parsing logs, in the form "type" to file containing the corresponding GROK patterns.
         All default patterns are automatically included.
         See <https://github.com/crowdsecurity/crowdsec/tree/master/config/patterns>.
@@ -130,7 +130,7 @@ in {
       '';
     };
     settings = mkOption {
-      description = mdDoc ''
+      description = ''
         Settings for Crowdsec. Refer to the defaults at
         <https://github.com/crowdsecurity/crowdsec/blob/master/config/config.yaml>.
       '';
