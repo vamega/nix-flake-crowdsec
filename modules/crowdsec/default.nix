@@ -10,10 +10,14 @@
 
   pkg = cfg.package;
 
-  defaultPatterns = lib.mapAttrs (name: value: lib.mkDefault "${pkg}/share/crowdsec/config/patterns/${name}") (builtins.readDir "${pkg}/share/crowdsec/config/patterns");
+  defaultPatternsDir = "${pkg}/share/crowdsec/config/patterns";
 
   patternsDir = pkgs.runCommandNoCC "crowdsec-patterns" {} ''
     mkdir -p $out
+    for f in ${defaultPatternsDir}/*; do
+      ln -sf "$f" "$out/$(basename $f)"
+    done
+
     ${lib.concatStringsSep "\n" (lib.attrValues (lib.mapAttrs (
         k: v: ''
           ln -sf ${v} $out/${k}
@@ -160,7 +164,6 @@ in {
   in
     lib.mkIf (cfg.enable) {
       services.crowdsec.settings = defaultSettings;
-      services.crowdsec.patterns = defaultPatterns;
 
       environment = {
         systemPackages = [cscli];
